@@ -24,16 +24,16 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 
 | # | 测试时间 | 模型 | 推理 token（思考强度参考） | AI 平台 | 问题备注 | 看动画 / 源码 |
 |---|---|---|---|---|---|---|
-| 1 | 2026-11-15 23:29 | 均衡（GLM5.3，档位） | 132 | WorkBuddy · CLI | 基准档位；输出最简短。**问题：轮子起飞** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test01_20261115-2330_balanced.html) · [源码](test01_20261115-2330_balanced.html) |
-| 2 | 2026-11-15 23:38 | DeepSeek-V4.1-Flash | 13,878 | 同济人工智能平台（API 接入） | 多次改写（20 次写操作）。**问题：脚不在踏板上** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test02_20261115-2338_deepseek-v4.1-flash.html) · [源码](test02_20261115-2338_deepseek-v4.1-flash.html) |
-| 3 | 2026-11-15 23:40 | 快速（档位） | 24,023 | WorkBuddy · CLI | 推理量最高之一，但耗时短；笔记未记录具体问题 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test03_20261115-2340_fast.html) · [源码](test03_20261115-2340_fast.html) |
-| 4 | 2026-11-15 23:40 | DeepSeek-V4.1-Flash | 19,717 | WorkBuddy · CLI（自带） | 与第 2 条同模型，写操作最多（52 次）。**问题：屁股轻微离开坐垫** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test04_20261115-2340_deepseek-v4.1-flash.html) · [源码](test04_20261115-2340_deepseek-v4.1-flash.html) |
-| 5 | 2026-11-15 23:41 | Hy4 | 4,647 | WorkBuddy · CLI | 文件最丰富（26K），细节较多。**问题：踏板穿模** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test05_20261115-2341_hy4.html) · [源码](test05_20261115-2341_hy4.html) |
-| 6 | 2026-11-15 23:45 | GLM-5.3-Flash | 87 | WorkBuddy · CLI | 推理量极低，几乎直接输出。**问题：鸟变形，脚错** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test06_20261115-2345_glm-5.3-flash.html) · [源码](test06_20261115-2345_glm-5.3-flash.html) |
-| 7 | 2026-11-16 00:01 | Qwen3.8-Flash-Next | 0（未回报） | 同济人工智能平台（API 接入） | 唯一追加提问"？"的一次；不回报推理 token。**问题：脚不对，轮子乱飞** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test07_20261116-0001_qwen3.8-flash-next.html) · [源码](test07_20261116-0001_qwen3.8-flash-next.html) |
-| 8 | 2026-11-16 00:06 | Hy3 | 6,171 | WorkBuddy · CLI | 有对应预览截图。**问题：脚穿模、踏板穿模** | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test08_20261116-0006_hy3.html) · [源码](test08_20261116-0006_hy3.html) |
-| 9 | 2026-11-16 00:16 | DeepSeek-V4.1-Flash | 24,424 | 同济人工智能平台（API 接入） | 推理 token 最高的一次；笔记未记录具体问题 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test10_20261116-0016_deepseek-v4.1-flash.html) · [源码](test10_20261116-0016_deepseek-v4.1-flash.html) |
-| 10 | 2026-11-16 10:58 | 未记录（下载副本） | 无法读取 | 未记录 | Downloads 中的副本，原会话信息已丢失 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test11_20261116-1058_unknown.html) · [源码](test11_20261116-1058_unknown.html) |
+| 1 | 2026-11-15 23:29 | 均衡（GLM5.3，档位） | 132 | WorkBuddy · CLI | 轮子起飞，鹈鹕造型一般；腿和脚断连、车没有踏板；链条逻辑出错连在前轮；轮子飞到天上，自行车整体造型完全丢失，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test01_20261115-2330_balanced.html) · [源码](test01_20261115-2330_balanced.html) |
+| 2 | 2026-11-15 23:38 | DeepSeek-V4.1-Flash | 13,878 | 同济人工智能平台（API 接入） | 脚不在踏板上，踏板转动错误，膝盖逻辑错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test02_20261115-2338_deepseek-v4.1-flash.html) · [源码](test02_20261115-2338_deepseek-v4.1-flash.html) |
+| 3 | 2026-11-15 23:40 | 快速（档位） | 24,023 | WorkBuddy · CLI | 效果出色，无明显逻辑错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test03_20261115-2340_fast.html) · [源码](test03_20261115-2340_fast.html) |
+| 4 | 2026-11-15 23:40 | DeepSeek-V4.1-Flash | 19,717 | WorkBuddy · CLI（自带） | 无明显错误，屁股轻微离开板凳 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test04_20261115-2340_deepseek-v4.1-flash.html) · [源码](test04_20261115-2340_deepseek-v4.1-flash.html) |
+| 5 | 2026-11-15 23:41 | Hy4 | 4,647 | WorkBuddy · CLI | 鹈鹕造型有点丑，踏板穿模 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test05_20261115-2341_hy4.html) · [源码](test05_20261115-2341_hy4.html) |
+| 6 | 2026-11-15 23:45 | GLM-5.3-Flash | 87 | WorkBuddy · CLI | 鸟严重变形且身体部分分开，腿画错、脚和腿分开；地面运动反了，自行车结构错误，踏板运动不合逻辑，有一只脚粘在踏板上，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test06_20261115-2345_glm-5.3-flash.html) · [源码](test06_20261115-2345_glm-5.3-flash.html) |
+| 7 | 2026-11-16 00:01 | Qwen3.8-Flash-Next | 0（未回报） | 同济人工智能平台（API 接入） | 轮子转动错误且不在自行车上，踏板乱转；“鹈鹕”两个字都没写对；脚乱踩且不是骑车动作；自行车结构丢失，运动不连贯，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test07_20261116-0001_qwen3.8-flash-next.html) · [源码](test07_20261116-0001_qwen3.8-flash-next.html) |
+| 8 | 2026-11-16 00:06 | Hy3 | 6,171 | WorkBuddy · CLI | 脚和踏板穿模，图层关系不对 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test08_20261116-0006_hy3.html) · [源码](test08_20261116-0006_hy3.html) |
+| 9 | 2026-11-16 00:16 | DeepSeek-V4.1-Flash | 24,424 | 同济人工智能平台（API 接入） | 脚穿模，地面运动方向错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test10_20261116-0016_deepseek-v4.1-flash.html) · [源码](test10_20261116-0016_deepseek-v4.1-flash.html) |
+| 10 | 2026-11-16 10:58 | 未记录（下载副本） | 无法读取 | 未记录 | 地面运动方向不对 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test11_20261116-1058_unknown.html) · [源码](test11_20261116-1058_unknown.html) |
 预览截图：[preview_20261116-0006_hy3.png](preview_20261116-0006_hy3.png)（对应第 8 条 Hy3）
 
 ## 逐条审查清单
@@ -72,16 +72,16 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 
 | # | 模型 | A 鹈鹕本体 | B 车架结构 | C 骑行姿态 | D 运动传动 | E 场景整体 | 发现的问题 | 结论 |
 |---|---|---|---|---|---|---|---|---|
-| 1 | 均衡（GLM5.3） |  | ✗ |  |  |  | 轮子起飞 | 有问题 |
-| 2 | DeepSeek-V4.1-Flash |  |  | ✗ |  |  | 脚不在踏板上 | 有问题 |
-| 3 | 快速 |  |  |  |  |  |  |  |
-| 4 | DeepSeek-V4.1-Flash |  |  | ✗ |  |  | 屁股轻微离开坐垫 | 有问题 |
-| 5 | Hy4 |  |  |  | ✗ |  | 踏板穿模 | 有问题 |
-| 6 | GLM-5.3-Flash | ✗ |  | ✗ |  |  | 鸟变形，脚错 | 有问题 |
-| 7 | Qwen3.8-Flash-Next |  | ✗ | ✗ |  |  | 脚不对，轮子乱飞 | 有问题 |
-| 8 | Hy3 |  |  | ✗ | ✗ |  | 脚穿模、踏板穿模 | 有问题 |
-| 9 | DeepSeek-V4.1-Flash |  |  |  |  |  |  |  |
-| 10 | 未记录 |  |  |  |  |  |  |  |
+| 1 | 均衡（GLM5.3） | ✓（造型一般） | ✗ | ✗ | ✗ | ✗ | 轮子起飞，鹈鹕造型一般；腿和脚断连、车没有踏板；链条连在前轮；轮子飞到天上导致整车造型丢失 | 效果极差 |
+| 2 | DeepSeek-V4.1-Flash |  |  | ✗ | ✗ |  | 脚不在踏板上，踏板转动错误，膝盖逻辑错误 | 有问题 |
+| 3 | 快速 | ✓ | ✓ | ✓ | ✓ | ✓ | 效果出色，无明显逻辑错误 | 效果出色 |
+| 4 | DeepSeek-V4.1-Flash | ✓ | ✓ | ✗ | ✓ | ✓ | 无明显错误，屁股轻微离开板凳 | 基本正常 |
+| 5 | Hy4 | ✗ |  |  | ✗ |  | 鹈鹕造型有点丑，踏板穿模 | 有问题 |
+| 6 | GLM-5.3-Flash | ✗ | ✗ | ✗ | ✗ | ✗ | 鸟严重变形、身体分开；腿画错、脚和腿分开；地面运动反了；自行车结构错误；踏板运动不合逻辑；一只脚粘在踏板上 | 效果极差 |
+| 7 | Qwen3.8-Flash-Next | ✗ | ✗ | ✗ | ✗ | ✗ | 轮子转动错误且不在车上，踏板乱转；“鹈鹕”两字写错；脚乱踩非骑车动作；自行车结构丢失，运动不连贯 | 效果极差 |
+| 8 | Hy3 |  |  | ✗ | ✗ | ✗ | 脚和踏板穿模，图层关系不对 | 有问题 |
+| 9 | DeepSeek-V4.1-Flash |  |  | ✗ |  | ✗ | 脚穿模，地面运动方向错误 | 有问题 |
+| 10 | 未记录 |  |  |  |  | ✗ | 地面运动方向不对 | 轻微问题 |
 ## 快速观察
 
 - **推理量最高**：DeepSeek-V4.1-Flash（00:16，24,424）和「快速」档位（24,023）——生成前想得最多。
@@ -90,11 +90,18 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 - **档位 vs 模型**：「均衡」「快速」是产品内的档位名称，不是具体模型名；其余为模型版本号。
 - **代码丰富度与推理量不完全正相关**：Hy4 推理量中等，但文件最丰富（26K）。
 
+### 基于逐条审查的观察（10 条补充结果）
+- **效果最好**：第 3 条（快速档位）——效果出色、无明显逻辑错误；第 4 条（DeepSeek 自带）仅屁股轻微离开板凳。
+- **效果极差**：第 1、6、7 条——分别出现轮子飞出天际、鸟体严重变形结构分解、整车结构丢失且文字写错。
+- **共性问题 · 穿模**：第 5、8、9 条都有踏板或脚的穿模 / 图层关系错误。
+- **共性问题 · 地面方向**：第 6、9、10 条地面运动方向错误或反了。
+- **推理量与效果不强相关**：推理量最高的第 3、9 条分别是「效果出色」和「脚穿模、地面方向错」；推理量最低的第 6 条（87）效果极差。
+
 ## 口径说明
 
 - **测试时间**取自各会话第一条消息的发出时间（比文件修改时间更接近真实测试时刻）。
 - **推理 token**取自该会话首轮生成（创建 HTML 那一步）的 `reasoning_tokens`。
 - **AI 平台**：根据会话模型 ID 区分——`custom-local:DeepSeek-V4.1-Flash` 与 Qwen 为同济人工智能平台（API 接入）；其余为 WorkBuddy 自带（CLI 客户端）。
 - **思考强度档位**（低/中/高）未被系统写入记录，故无法直接显示，以推理 token 作为替代指标。
-- 「问题备注 / 发现的问题」来自用户手写笔记的审查结果；笔记未记录的条目标注"笔记未记录具体问题"。
+- 「问题备注 / 发现的问题」来自用户逐条观看动画后的审查结果（共 10 条补充内容），已按 A–E 清单归类并填入审查记录表。
 - 原始文件仍保留在各自的工作区目录中，本仓库为整理后的副本，未删除任何原文件。
