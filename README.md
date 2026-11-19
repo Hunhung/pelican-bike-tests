@@ -1,6 +1,6 @@
-# 鹈鹕骑车动画 —— 模型横向对比测试
+# 鹈鹕骑车动画 —— 跨平台 / 跨模型横向对比测试
 
-同一条指令，在 9 个不同模型/档位上各跑一次，对比各自的 SVG 动画代码生成能力。
+同一条指令，在 **3 个 AI 平台**（WorkBuddy CLI、同济人工智能平台 API、豆包桌面端 Agent）上的多个模型 / 档位各跑一次，**共 14 条**，对比各自的 SVG 动画代码生成能力。
 
 ## 测试指令（所有测试共用）
 
@@ -15,25 +15,31 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 
 > 想换成官方稳定链接：在仓库 **Settings → Pages → Source 选 main → Save**，开启后把下面的 `htmlpreview.github.io/?https://github.com/...` 换成 `https://hunhung.github.io/pelican-bike-tests/<文件名>` 即可，点开即播。
 
-## 横向对比表
+## 横向对比表（14 条，按平台 / 模型横向比较）
 
 > **思考强度说明**：系统没有把界面上选择的档位（低/中/高）写进记录，无法直接读取。
-> 下表改用**首轮生成所消耗的推理 token 数（reasoning tokens）**作为可量化的参考指标——
-> 数值越高，代表该次生成实际"想得越多"。注意这不完全等于档位（也受模型实现和任务复杂度影响），
-> 且个别模型（如 Qwen）不回报该指标，记为 0，不代表没有思考。
+> 下表用**首轮生成所消耗的推理 token 数（reasoning tokens）**作为可量化参考——数值越高代表该次生成实际"想得越多"。
+> 注意这不完全等于档位（也受模型实现和任务复杂度影响）；个别模型（如 Qwen）不回报该指标，记为 0；豆包桌面端的 4 条无记录，记为「未记录」。
+>
+> **问题备注来源**：第 1–10 条是用户逐条观看动画后的视觉审查结论；第 11–14 条是**豆包侧自行从源码核对撰写**、**待用户视觉审查补充**，已在备注中标注。
 
-| # | 测试时间 | 模型 | 推理 token（思考强度参考） | AI 平台 | 问题备注 | 看动画 / 源码 |
+| # | 测试时间 | AI 平台 | 模型 / 档位 | 思考强度（推理 token） | 问题备注 | 看动画 / 源码 |
 |---|---|---|---|---|---|---|
-| 1 | 2026-11-15 23:29 | 均衡（GLM5.3，档位） | 132 | WorkBuddy · CLI | 轮子起飞，鹈鹕造型一般；腿和脚断连、车没有踏板；链条逻辑出错连在前轮；轮子飞到天上，自行车整体造型完全丢失，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test01_20261115-2330_balanced.html) · [源码](test01_20261115-2330_balanced.html) |
-| 2 | 2026-11-15 23:38 | DeepSeek-V4.1-Flash | 13,878 | 同济人工智能平台（API 接入） | 脚不在踏板上，踏板转动错误，膝盖逻辑错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test02_20261115-2338_deepseek-v4.1-flash.html) · [源码](test02_20261115-2338_deepseek-v4.1-flash.html) |
-| 3 | 2026-11-15 23:40 | 快速（档位） | 24,023 | WorkBuddy · CLI | 效果出色，无明显逻辑错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test03_20261115-2340_fast.html) · [源码](test03_20261115-2340_fast.html) |
-| 4 | 2026-11-15 23:40 | DeepSeek-V4.1-Flash | 19,717 | WorkBuddy · CLI（自带） | 无明显错误，屁股轻微离开板凳 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test04_20261115-2340_deepseek-v4.1-flash.html) · [源码](test04_20261115-2340_deepseek-v4.1-flash.html) |
-| 5 | 2026-11-15 23:41 | Hy4 | 4,647 | WorkBuddy · CLI | 鹈鹕造型有点丑，踏板穿模 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test05_20261115-2341_hy4.html) · [源码](test05_20261115-2341_hy4.html) |
-| 6 | 2026-11-15 23:45 | GLM-5.3-Flash | 87 | WorkBuddy · CLI | 鸟严重变形且身体部分分开，腿画错、脚和腿分开；地面运动反了，自行车结构错误，踏板运动不合逻辑，有一只脚粘在踏板上，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test06_20261115-2345_glm-5.3-flash.html) · [源码](test06_20261115-2345_glm-5.3-flash.html) |
-| 7 | 2026-11-16 00:01 | Qwen3.8-Flash-Next | 0（未回报） | 同济人工智能平台（API 接入） | 轮子转动错误且不在自行车上，踏板乱转；“鹈鹕”两个字都没写对；脚乱踩且不是骑车动作；自行车结构丢失，运动不连贯，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test07_20261116-0001_qwen3.8-flash-next.html) · [源码](test07_20261116-0001_qwen3.8-flash-next.html) |
-| 8 | 2026-11-16 00:06 | Hy3 | 6,171 | WorkBuddy · CLI | 脚和踏板穿模，图层关系不对 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test08_20261116-0006_hy3.html) · [源码](test08_20261116-0006_hy3.html) |
-| 9 | 2026-11-16 00:16 | DeepSeek-V4.1-Flash | 24,424 | 同济人工智能平台（API 接入） | 脚穿模，地面运动方向错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test10_20261116-0016_deepseek-v4.1-flash.html) · [源码](test10_20261116-0016_deepseek-v4.1-flash.html) |
-| 10 | 2026-11-16 10:58 | 未记录（下载副本） | 无法读取 | 未记录 | 地面运动方向不对 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test11_20261116-1058_unknown.html) · [源码](test11_20261116-1058_unknown.html) |
+| 1 | 2026-11-15 23:29 | WorkBuddy · CLI | 均衡（GLM5.3，档位） | 132 | 轮子起飞，鹈鹕造型一般；腿和脚断连、车没有踏板；链条逻辑出错连在前轮；轮子飞到天上，自行车整体造型完全丢失，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test01_20261115-2330_balanced.html) · [源码](test01_20261115-2330_balanced.html) |
+| 2 | 2026-11-15 23:38 | 同济人工智能平台（API 接入） | DeepSeek-V4.1-Flash | 13,878 | 脚不在踏板上，踏板转动错误，膝盖逻辑错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test02_20261115-2338_deepseek-v4.1-flash.html) · [源码](test02_20261115-2338_deepseek-v4.1-flash.html) |
+| 3 | 2026-11-15 23:40 | WorkBuddy · CLI | 快速（档位） | 24,023 | 效果出色，无明显逻辑错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test03_20261115-2340_fast.html) · [源码](test03_20261115-2340_fast.html) |
+| 4 | 2026-11-15 23:40 | WorkBuddy · CLI（自带） | DeepSeek-V4.1-Flash | 19,717 | 无明显错误，屁股轻微离开板凳 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test04_20261115-2340_deepseek-v4.1-flash.html) · [源码](test04_20261115-2340_deepseek-v4.1-flash.html) |
+| 5 | 2026-11-15 23:41 | WorkBuddy · CLI | Hy4 | 4,647 | 鹈鹕造型有点丑，踏板穿模 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test05_20261115-2341_hy4.html) · [源码](test05_20261115-2341_hy4.html) |
+| 6 | 2026-11-15 23:45 | WorkBuddy · CLI | GLM-5.3-Flash | 87 | 鸟严重变形且身体部分分开，腿画错、脚和腿分开；地面运动反了，自行车结构错误，踏板运动不合逻辑，有一只脚粘在踏板上，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test06_20261115-2345_glm-5.3-flash.html) · [源码](test06_20261115-2345_glm-5.3-flash.html) |
+| 7 | 2026-11-16 00:01 | 同济人工智能平台（API 接入） | Qwen3.8-Flash-Next | 0（未回报） | 轮子转动错误且不在自行车上，踏板乱转；“鹈鹕”两个字都没写对；脚乱踩且不是骑车动作；自行车结构丢失，运动不连贯，效果极差 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test07_20261116-0001_qwen3.8-flash-next.html) · [源码](test07_20261116-0001_qwen3.8-flash-next.html) |
+| 8 | 2026-11-16 00:06 | WorkBuddy · CLI | Hy3 | 6,171 | 脚和踏板穿模，图层关系不对 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test08_20261116-0006_hy3.html) · [源码](test08_20261116-0006_hy3.html) |
+| 9 | 2026-11-16 00:16 | 同济人工智能平台（API 接入） | DeepSeek-V4.1-Flash | 24,424 | 脚穿模，地面运动方向错误 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test10_20261116-0016_deepseek-v4.1-flash.html) · [源码](test10_20261116-0016_deepseek-v4.1-flash.html) |
+| 10 | 2026-11-16 10:58 | 未记录（下载副本） | 未记录 | 无法读取 | 地面运动方向不对 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test11_20261116-1058_unknown.html) · [源码](test11_20261116-1058_unknown.html) |
+| 11 | 2026-11-19 18:50 | 豆包桌面端 Agent | DeepSeek-V4.1-Flash（用户补充） | 未记录 | 〔豆包源码核对，待视觉审查〕暖色日落纸张风；两连杆 IK；曲柄 68°/s、车轮 150°/s 固定常量、非齿比联动；膝踝折线偏硬；无暂停按钮 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p01-sunset-ik-20261119.html) · [源码](p01-sunset-ik-20261119.html) |
+| 12 | 2026-11-19 18:36 | 豆包桌面端 Agent | 豆包 2.1 Pro（用户补充） | 未记录 | 〔豆包源码核对，待视觉审查〕两连杆 IK 求膝盖；曲柄→牙盘→车轮按齿比 `GEAR=2.6` 联动；暂停/播放按钮 + 空格键；无已知遗留问题 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p02-gear-ik-20261119.html) · [源码](p02-gear-ik-20261119.html) |
+| 13 | 2026-11-19 18:32 | 豆包桌面端 Agent | 豆包 2.1 Lite（用户补充） | 未记录 | 〔豆包源码核对，待视觉审查〕修复踏板翻转、云朵无缝循环；膝盖为估算非真 IK；无暂停控制 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p03-pedal-fix-20261119.html) · [源码](p03-pedal-fix-20261119.html) |
+| 14 | 2026-11-16 00:25 | 豆包桌面端 Agent | 未记录（豆包未披露） | 未记录 | 〔豆包源码核对，待视觉审查〕丝网印刷旅行海报风；rAF 逐帧、齿比联动、分层视差；多轮截图自检修 7 处；播放/暂停 + 空格键 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p04-poster-raf-20261116.html) · [源码](p04-poster-raf-20261116.html) |
+
 预览截图：[preview_20261116-0006_hy3.png](preview_20261116-0006_hy3.png)（对应第 8 条 Hy3）
 
 ## 逐条审查清单
@@ -69,80 +75,70 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 ## 我的审查记录（手动填写）
 
 > 每一项填 `✓`（正常）/ `✗`（有问题）/ `？`（看不清），异常的具体表现写进「发现的问题」。
+> 第 1–10 条已填；第 11–14 条待用户视觉审查后填写（现有描述为豆包源码核对，仅供参照）。
 
-| # | 模型 | A 鹈鹕本体 | B 车架结构 | C 骑行姿态 | D 运动传动 | E 场景整体 | 发现的问题 | 结论 |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 均衡（GLM5.3） | ✓（造型一般） | ✗ | ✗ | ✗ | ✗ | 轮子起飞，鹈鹕造型一般；腿和脚断连、车没有踏板；链条连在前轮；轮子飞到天上导致整车造型丢失 | 效果极差 |
-| 2 | DeepSeek-V4.1-Flash |  |  | ✗ | ✗ |  | 脚不在踏板上，踏板转动错误，膝盖逻辑错误 | 有问题 |
-| 3 | 快速 | ✓ | ✓ | ✓ | ✓ | ✓ | 效果出色，无明显逻辑错误 | 效果出色 |
-| 4 | DeepSeek-V4.1-Flash | ✓ | ✓ | ✗ | ✓ | ✓ | 无明显错误，屁股轻微离开板凳 | 基本正常 |
-| 5 | Hy4 | ✗ |  |  | ✗ |  | 鹈鹕造型有点丑，踏板穿模 | 有问题 |
-| 6 | GLM-5.3-Flash | ✗ | ✗ | ✗ | ✗ | ✗ | 鸟严重变形、身体分开；腿画错、脚和腿分开；地面运动反了；自行车结构错误；踏板运动不合逻辑；一只脚粘在踏板上 | 效果极差 |
-| 7 | Qwen3.8-Flash-Next | ✗ | ✗ | ✗ | ✗ | ✗ | 轮子转动错误且不在车上，踏板乱转；“鹈鹕”两字写错；脚乱踩非骑车动作；自行车结构丢失，运动不连贯 | 效果极差 |
-| 8 | Hy3 |  |  | ✗ | ✗ | ✗ | 脚和踏板穿模，图层关系不对 | 有问题 |
-| 9 | DeepSeek-V4.1-Flash |  |  | ✗ |  | ✗ | 脚穿模，地面运动方向错误 | 有问题 |
-| 10 | 未记录 |  |  |  |  | ✗ | 地面运动方向不对 | 轻微问题 |
+| # | 平台 | 模型 | A 鹈鹕本体 | B 车架结构 | C 骑行姿态 | D 运动传动 | E 场景整体 | 发现的问题 | 结论 |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | WorkBuddy | 均衡（GLM5.3） | ✓（造型一般） | ✗ | ✗ | ✗ | ✗ | 轮子起飞，鹈鹕造型一般；腿和脚断连、车没有踏板；链条连在前轮；轮子飞到天上导致整车造型丢失 | 效果极差 |
+| 2 | 同济 API | DeepSeek-V4.1-Flash |  |  | ✗ | ✗ |  | 脚不在踏板上，踏板转动错误，膝盖逻辑错误 | 有问题 |
+| 3 | WorkBuddy | 快速 | ✓ | ✓ | ✓ | ✓ | ✓ | 效果出色，无明显逻辑错误 | 效果出色 |
+| 4 | WorkBuddy | DeepSeek-V4.1-Flash | ✓ | ✓ | ✗ | ✓ | ✓ | 无明显错误，屁股轻微离开板凳 | 基本正常 |
+| 5 | WorkBuddy | Hy4 | ✗ |  |  | ✗ |  | 鹈鹕造型有点丑，踏板穿模 | 有问题 |
+| 6 | WorkBuddy | GLM-5.3-Flash | ✗ | ✗ | ✗ | ✗ | ✗ | 鸟严重变形、身体分开；腿画错、脚和腿分开；地面运动反了；自行车结构错误；踏板运动不合逻辑；一只脚粘在踏板上 | 效果极差 |
+| 7 | 同济 API | Qwen3.8-Flash-Next | ✗ | ✗ | ✗ | ✗ | ✗ | 轮子转动错误且不在车上，踏板乱转；“鹈鹕”两字写错；脚乱踩非骑车动作；自行车结构丢失，运动不连贯 | 效果极差 |
+| 8 | WorkBuddy | Hy3 |  |  | ✗ | ✗ | ✗ | 脚和踏板穿模，图层关系不对 | 有问题 |
+| 9 | 同济 API | DeepSeek-V4.1-Flash |  |  | ✗ |  | ✗ | 脚穿模，地面运动方向错误 | 有问题 |
+| 10 | 未记录 | 未记录 |  |  |  |  | ✗ | 地面运动方向不对 | 轻微问题 |
+| 11 | 豆包桌面端 | DeepSeek-V4.1-Flash |  |  |  |  |  | 待视觉审查 | 待审 |
+| 12 | 豆包桌面端 | 豆包 2.1 Pro |  |  |  |  |  | 待视觉审查 | 待审 |
+| 13 | 豆包桌面端 | 豆包 2.1 Lite |  |  |  |  |  | 待视觉审查 | 待审 |
+| 14 | 豆包桌面端 | 未记录 |  |  |  |  |  | 待视觉审查 | 待审 |
+
 ## 快速观察
 
+**推理量（仅 WorkBuddy / 同济有数据）**
 - **推理量最高**：DeepSeek-V4.1-Flash（00:16，24,424）和「快速」档位（24,023）——生成前想得最多。
 - **推理量最低**：GLM-5.3-Flash（87）、均衡档位（132）——几乎不假思索直接出代码。
-- **同模型对比**：DeepSeek-V4.1-Flash 跑了 3 次（第 2/4/9 条），推理量在 13.8k～24.4k 之间波动。
-- **档位 vs 模型**：「均衡」「快速」是产品内的档位名称，不是具体模型名；其余为模型版本号。
-- **代码丰富度与推理量不完全正相关**：Hy4 推理量中等，但文件最丰富（26K）。
+- **同模型对比**：DeepSeek-V4.1-Flash 在 WorkBuddy / 同济共跑了 3 次（第 2/4/9 条），推理量在 13.8k～24.4k 之间波动。
 
-### 基于逐条审查的观察（10 条补充结果）
+**视觉审查结论（第 1–10 条）**
 - **效果最好**：第 3 条（快速档位）——效果出色、无明显逻辑错误；第 4 条（DeepSeek 自带）仅屁股轻微离开板凳。
 - **效果极差**：第 1、6、7 条——分别出现轮子飞出天际、鸟体严重变形结构分解、整车结构丢失且文字写错。
 - **共性问题 · 穿模**：第 5、8、9 条都有踏板或脚的穿模 / 图层关系错误。
 - **共性问题 · 地面方向**：第 6、9、10 条地面运动方向错误或反了。
 - **推理量与效果不强相关**：推理量最高的第 3、9 条分别是「效果出色」和「脚穿模、地面方向错」；推理量最低的第 6 条（87）效果极差。
 
+**实现层面（第 11–14 条，豆包源码核对）**
+- **齿比联动**：第 12、14 条按齿比联动（`GEAR=2.6` / rAF）；第 11 条曲柄与车轮为各自固定角速度（约 2.2:1）但非联动；第 13 条膝盖为估算、非真 IK。
+- **暂停控制**：第 12、14 条有播放/暂停按钮 + 空格键；第 11、13 条没有常规暂停入口。
+- **自检程度**：第 14 条经多轮无头浏览器截图自检、修了 7 处；第 13 条修了 2 处；第 11 条明确说明未经过程核对、结论全部来自源码。
+- 这 4 条尚未做视觉审查，**不能直接与第 1–10 条的效果结论并排比较**；待用户补充后再更新。
+
+**档位 vs 模型**
+- 「均衡」「快速」是产品内的档位名称，不是具体模型名；其余为模型版本号。
+- 豆包侧以"内部版本信息"为由未披露模型名，第 11/12/13 条由用户按时间补充，第 14 条仍为未记录。
+
 ## 口径说明
 
-- **测试时间**取自各会话第一条消息的发出时间（比文件修改时间更接近真实测试时刻）。
-- **推理 token**取自该会话首轮生成（创建 HTML 那一步）的 `reasoning_tokens`。
-- **AI 平台**：根据会话模型 ID 区分——`custom-local:DeepSeek-V4.1-Flash` 与 Qwen 为同济人工智能平台（API 接入）；其余为 WorkBuddy 自带（CLI 客户端）。
+- **测试时间**：第 1–10 条取自各会话第一条消息的发出时间（比文件修改时间更接近真实测试时刻）；第 11–14 条取文件最后写入时间——用户口头补充的时间（18:53 / 18:36 / 18:33）与写入时间相差 1~3 分钟，模型按最接近者对应。
+- **推理 token**：第 1–10 条取自该会话首轮生成（创建 HTML 那一步）的 `reasoning_tokens`；豆包桌面端无此数据。
+- **AI 平台**：WorkBuddy 的记录按会话模型 ID 区分——`custom-local:DeepSeek-V4.1-Flash` 与 Qwen 为同济人工智能平台（API 接入），其余为 WorkBuddy 自带（CLI 客户端）；第 11–14 条为豆包 Windows 桌面端 Agent 模式。
 - **思考强度档位**（低/中/高）未被系统写入记录，故无法直接显示，以推理 token 作为替代指标。
-- 「问题备注 / 发现的问题」来自用户逐条观看动画后的审查结果（共 10 条补充内容），已按 A–E 清单归类并填入审查记录表。
-- 原始文件仍保留在各自的工作区目录中，本仓库为整理后的副本，未删除任何原文件。
+- 「问题备注 / 发现的问题」：第 1–10 条来自用户逐条观看动画后的视觉审查（共 10 条补充内容），已按 A–E 清单归类；第 11–14 条为豆包源码核对撰写、待用户视觉审查补充。
+- 原始文件仍保留在各自的工作区 / `C:\Users\汪小棠\Doubao\chats\` 目录中，本仓库为整理后的副本，未删除任何原文件。
 
----
+## 逐条详细备注（豆包 4 条，源码核对原文）
 
-## 豆包桌面端补充测试（4 条）
+> 以下为第 11–14 条豆包侧提供的完整源码核对描述，非用户视觉审查结论，供审查时参考。
 
-> 这 4 条来自**豆包（Doubao）Windows 桌面端 Agent 模式**，与上面 10 条（WorkBuddy / 同济 API）来源不同，故单独列出。
-> 模型名由豆包侧以"内部版本信息"为由未披露，除用户补充的三条外均记为「未记录」。
-> **测试时间**取文件最后写入时间；用户口头补充的时间（18:53 / 18:36 / 18:33）与写入时间相差 1~3 分钟，模型按最接近者对应。
-> **思考强度**：豆包侧无记录，全部记为「未记录」。
-
-### 横向对比
-
-| # | 测试时间 | 模型 | AI 平台 | 思考强度 | 风格 / 实现要点 | 已知问题 | 动画 / 源码 |
-|---|---|---|---|---|---|---|---|
-| D1 | 2026-11-19 18:50 | DeepSeek-V4.1-Flash（用户补充，原报 18:53） | 豆包桌面端 Agent | 未记录 | 暖色日落纸张风；双腿两连杆 IK；曲柄 68°/s、车轮 150°/s 为固定常量，非齿比联动；无暂停按钮（`#数字` 冻结帧 / 减少动态效果） | 膝、踝折线转折偏硬；曲柄与车轮未按齿比联动 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p01-sunset-ik-20261119.html) · [源码](p01-sunset-ik-20261119.html) |
-| D2 | 2026-11-19 18:36 | 豆包 2.1 Pro（用户补充） | 豆包桌面端 Agent | 未记录 | 两连杆 IK 求膝盖；曲柄→牙盘→车轮按显式齿比 `GEAR=2.6` 联动；暂停/播放按钮 + 空格键，暂停时冻结 CSS 云层与光芒 | 无已知遗留问题 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p02-gear-ik-20261119.html) · [源码](p02-gear-ik-20261119.html) |
-| D3 | 2026-11-19 18:32 | 豆包 2.1 Lite（用户补充，原报 18:33） | 豆包桌面端 Agent | 未记录 | 修过两处：①踏板移出旋转曲柄组、改由 JS 按曲柄角定位（原会翻转）；②云朵/灌木改双份平铺 800px 无缝接续 | 膝盖为「髋与踏板中点偏移」估算、非真 IK，个别相位小腿略生硬；无暂停/播放 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p03-pedal-fix-20261119.html) · [源码](p03-pedal-fix-20261119.html) |
-| D4 | 2026-11-16 00:25 | 未记录（豆包未披露，用户未补充） | 豆包桌面端 Agent | 未记录 | 丝网印刷旅行海报风；`requestAnimationFrame` 逐帧写属性（IK 踩踏、齿比联动、围巾带状路径、分层视差）；播放/暂停 + 空格键，支持减少动态效果 | 经多轮无头 Chrome 截图自检修复：车架"X"形、车座被遮挡、翅膀撞色、脖子过短、腿与车架混淆、尾羽误读成手、窄屏布局——均已修 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p04-poster-raf-20261116.html) · [源码](p04-poster-raf-20261116.html) |
-
-### 每条详细备注（豆包侧源码核对原文）
-
-**D1 · p01-sunset-ik-20261119.html**
+**#11 · p01-sunset-ik-20261119.html**
 > 单文件 SVG 动画，暖色日落纸张风（米白底 `#F7F0E4` + 渐变天空 + 远山）。双腿用两连杆 IK 求解膝盖位置（取朝向车头的那个解），左右腿相差 180°；曲柄和车轮用的是两个**各自固定不变的角速度常量**（曲柄 68°/s、车轮 150°/s，约 2.2:1），没有按齿比联动。**没有暂停按钮**，只留了两条备用入口：地址栏加 `#数字` 可冻结在某一帧，系统开启"减少动态效果"时只渲染一帧。腿用 `polyline` 折线绘制，膝、踝处转折偏硬。另外，这份文件我这边没有生成过程记录，以上特征全部从源码读出，未经过程核对。
 
-**D2 · p02-gear-ik-20261119.html**
+**#12 · p02-gear-ik-20261119.html**
 > 两连杆逆运动学求解膝盖，曲柄→牙盘→车轮按显式齿比 `GEAR = 2.6` 联动；右上角"暂停/播放"按钮与空格键都能切换，暂停时给 `svg` 挂 `.paused` 类，同步冻结 CSS 云层与太阳光芒。没有已知遗留问题。
 
-**D3 · p03-pedal-fix-20261119.html**
+**#13 · p03-pedal-fix-20261119.html**
 > 生成中修了两处：① 踏板原本放在会旋转的曲柄组里，与曲柄的反向旋转叠加，导致踏板翻转，后来把踏板移出曲柄组，改由 JS 按曲柄角度直接定位；② 云朵和灌木原本无法无缝循环，现改为两份平铺、平移 800px 接续。**已知局限**：膝盖位置用"髋与踏板中点再偏移"来估算，不是真 IK，个别相位下小腿比例会略生硬；无暂停/播放控制。
 
-**D4 · p04-poster-raf-20261116.html**
+**#14 · p04-poster-raf-20261116.html**
 > 丝网印刷旅行海报风（平涂色块 + 墨线描边 + 半调网点 + 颗粒噪点）。`requestAnimationFrame` 逐帧写属性：双腿两骨骼 IK 踩踏板、曲柄带动牙盘与车轮、围巾用带状路径逐帧生成、海面与路面虚线加小岛做分层视差、云与海鸥、帆船轻微漂移。经多轮无头 Chrome 截图自检后修掉：车架被看成"X"形（加墨线双层并下移上管）、车座被身体遮住（上移露出）、翅膀与身体撞色（改同底色只留线）、脖子过短（加长并拆内外两层供点头）、腿与珊瑚色车架混淆（腿改浅色）、尾羽被误读成"手"（删除）、窄屏布局（改整幅居中卡片）。有播放/暂停按钮 + 空格键，支持 `prefers-reduced-motion`。
-
-### 豆包补充测试的观察
-
-- **齿比联动**：D2（`GEAR=2.6`）、D4 按齿比联动；D1 曲柄与车轮是各自固定角速度（约 2.2:1）但非联动；D3 膝盖为估算、非真 IK。
-- **暂停控制**：D2、D4 有播放/暂停按钮 + 空格键；D1、D3 没有常规暂停入口。
-- **自检程度**：D4 经过多轮无头浏览器截图自检、修了 7 处；D3 修了 2 处；D1 明确说明未经过程核对、全部结论来自源码。
-- **模型披露**：豆包侧对模型名均未披露，D1/D2/D3 由用户按时间补充，D4 仍为未记录。
-
-> **注意（待补充）**：上面这 4 条的「问题备注 / 已知问题」是**豆包侧自行从源码核对撰写的**，并非用户的视觉审查结论；用户之后会逐条补充自己的审查结果，届时再更新本表并补做 A–E 逐项打勾。原文件保留在 `C:\Users\汪小棠\Doubao\chats\` 下，仓库内为改名后的副本。
