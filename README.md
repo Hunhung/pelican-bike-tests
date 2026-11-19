@@ -13,7 +13,7 @@
 
 GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。要看动画请点表格里的 **「▶ 看动画」** 链接（走在线预览）；「源码」链接才是原始文件。
 
-> 想换成官方稳定链接：在仓库 **Settings → Pages → Source 选 main → Save**，开启后把下面的 `htmlpreview.github.io/?https://github.com/...` 换成 `https://hunhung.github.io/-/<文件名>` 即可，点开即播。
+> 想换成官方稳定链接：在仓库 **Settings → Pages → Source 选 main → Save**，开启后把下面的 `htmlpreview.github.io/?https://github.com/...` 换成 `https://hunhung.github.io/pelican-bike-tests/<文件名>` 即可，点开即播。
 
 ## 横向对比表
 
@@ -24,16 +24,16 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 
 | # | 测试时间 | 模型 | 推理 token（思考强度参考） | AI 平台 | 问题备注 | 看动画 / 源码 |
 |---|---|---|---|---|---|---|
-| 1 | 2026-11-15 23:29 | 均衡（档位） | 132 | WorkBuddy · CLI | 基准档位；输出最简短 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test01_20261115-2330_balanced.html) · [源码](test01_20261115-2330_balanced.html) |
-| 2 | 2026-11-15 23:38 | DeepSeek-V4.1-Flash | 13,878 | WorkBuddy · CLI | 多次改写（20 次写操作） | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test02_20261115-2338_deepseek-v4.1-flash.html) · [源码](test02_20261115-2338_deepseek-v4.1-flash.html) |
-| 3 | 2026-11-15 23:40 | 快速（档位） | 24,023 | WorkBuddy · CLI | 推理量最高之一，但耗时短 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test03_20261115-2340_fast.html) · [源码](test03_20261115-2340_fast.html) |
-| 4 | 2026-11-15 23:40 | DeepSeek-V4.1-Flash | 19,717 | WorkBuddy · CLI | 与第 2 条同模型，写操作最多（52 次） | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test04_20261115-2340_deepseek-v4.1-flash.html) · [源码](test04_20261115-2340_deepseek-v4.1-flash.html) |
-| 5 | 2026-11-15 23:41 | Hy4 | 4,647 | WorkBuddy · CLI | 文件最丰富（26K），细节较多 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test05_20261115-2341_hy4.html) · [源码](test05_20261115-2341_hy4.html) |
-| 6 | 2026-11-15 23:45 | GLM-5.3-Flash | 87 | WorkBuddy · CLI | 推理量极低，几乎直接输出 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test06_20261115-2345_glm-5.3-flash.html) · [源码](test06_20261115-2345_glm-5.3-flash.html) |
-| 7 | 2026-11-16 00:01 | Qwen3.8-Flash-Next | 0（未回报） | WorkBuddy · CLI | 唯一追加提问"？"的一次；不回报推理 token | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test07_20261116-0001_qwen3.8-flash-next.html) · [源码](test07_20261116-0001_qwen3.8-flash-next.html) |
-| 8 | 2026-11-16 00:06 | Hy3 | 6,171 | WorkBuddy · CLI | 有对应预览截图 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test08_20261116-0006_hy3.html) · [源码](test08_20261116-0006_hy3.html) |
-| 9 | 2026-11-16 00:16 | DeepSeek-V4.1-Flash | 24,424 | WorkBuddy · CLI | 推理 token 最高的一次 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test10_20261116-0016_deepseek-v4.1-flash.html) · [源码](test10_20261116-0016_deepseek-v4.1-flash.html) |
-| 10 | 2026-11-16 10:58 | 未记录（下载副本） | 无法读取 | 未记录 | Downloads 中的副本，原会话信息已丢失 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/-/blob/main/test11_20261116-1058_unknown.html) · [源码](test11_20261116-1058_unknown.html) |
+| 1 | 2026-11-15 23:29 | 均衡（档位） | 132 | WorkBuddy · CLI | 基准档位；输出最简短 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test01_20261115-2330_balanced.html) · [源码](test01_20261115-2330_balanced.html) |
+| 2 | 2026-11-15 23:38 | DeepSeek-V4.1-Flash | 13,878 | WorkBuddy · CLI | 多次改写（20 次写操作） | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test02_20261115-2338_deepseek-v4.1-flash.html) · [源码](test02_20261115-2338_deepseek-v4.1-flash.html) |
+| 3 | 2026-11-15 23:40 | 快速（档位） | 24,023 | WorkBuddy · CLI | 推理量最高之一，但耗时短 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test03_20261115-2340_fast.html) · [源码](test03_20261115-2340_fast.html) |
+| 4 | 2026-11-15 23:40 | DeepSeek-V4.1-Flash | 19,717 | WorkBuddy · CLI | 与第 2 条同模型，写操作最多（52 次） | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test04_20261115-2340_deepseek-v4.1-flash.html) · [源码](test04_20261115-2340_deepseek-v4.1-flash.html) |
+| 5 | 2026-11-15 23:41 | Hy4 | 4,647 | WorkBuddy · CLI | 文件最丰富（26K），细节较多 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test05_20261115-2341_hy4.html) · [源码](test05_20261115-2341_hy4.html) |
+| 6 | 2026-11-15 23:45 | GLM-5.3-Flash | 87 | WorkBuddy · CLI | 推理量极低，几乎直接输出 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test06_20261115-2345_glm-5.3-flash.html) · [源码](test06_20261115-2345_glm-5.3-flash.html) |
+| 7 | 2026-11-16 00:01 | Qwen3.8-Flash-Next | 0（未回报） | WorkBuddy · CLI | 唯一追加提问"？"的一次；不回报推理 token | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test07_20261116-0001_qwen3.8-flash-next.html) · [源码](test07_20261116-0001_qwen3.8-flash-next.html) |
+| 8 | 2026-11-16 00:06 | Hy3 | 6,171 | WorkBuddy · CLI | 有对应预览截图 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test08_20261116-0006_hy3.html) · [源码](test08_20261116-0006_hy3.html) |
+| 9 | 2026-11-16 00:16 | DeepSeek-V4.1-Flash | 24,424 | WorkBuddy · CLI | 推理 token 最高的一次 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test10_20261116-0016_deepseek-v4.1-flash.html) · [源码](test10_20261116-0016_deepseek-v4.1-flash.html) |
+| 10 | 2026-11-16 10:58 | 未记录（下载副本） | 无法读取 | 未记录 | Downloads 中的副本，原会话信息已丢失 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/test11_20261116-1058_unknown.html) · [源码](test11_20261116-1058_unknown.html) |
 
 预览截图：[preview_20261116-0006_hy3.png](preview_20261116-0006_hy3.png)（对应第 8 条 Hy3）
 
