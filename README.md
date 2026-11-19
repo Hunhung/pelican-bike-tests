@@ -39,7 +39,6 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 | 12 | 2026-11-19 18:36 | 豆包桌面端 Agent | 豆包 2.1 Pro（用户补充） | 未记录 | 鹈鹕没有手动作错误，地面运动方向不对，鹈鹕嘴巴太大，踏板穿模，膝盖动作不够顺畅 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p02-gear-ik-20261119.html) · [源码](p02-gear-ik-20261119.html) |
 | 13 | 2026-11-19 18:32 | 豆包桌面端 Agent | 豆包 2.1 Lite（用户补充） | 未记录 | 腿和身体严重分离，鹈鹕动作错误，踏板不完整。踏板和脚穿模。没有链条 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p03-pedal-fix-20261119.html) · [源码](p03-pedal-fix-20261119.html) |
 | 14 | 2026-11-16 00:25 | 豆包桌面端 Agent | 未记录（豆包未披露） | 未记录 | 鹈鹕动作错误，踏板和脚转动错误。轮子速度太快。 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p04-poster-raf-20261116.html) · [源码](p04-poster-raf-20261116.html) |
-
 | 15 | 2026-11-19 23:18 | WorkBuddy · CLI | Kimi-K3.1-Pro | 8,435 | 出色，无明显逻辑问题 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p15-kimi-k3.1-pro-20261119.html) · [源码](p15-kimi-k3.1-pro-20261119.html) |
 | 16 | 2026-11-19 23:17 | WorkBuddy · CLI | Space-Bunny | 19,980 | 腿穿模，链条转动方向错误，踏板连接不完整，屁股没挨着椅子 | [▶ 看动画](https://htmlpreview.github.io/?https://github.com/Hunhung/pelican-bike-tests/blob/main/p16-space-bunny-20261119.html) · [源码](p16-space-bunny-20261119.html) |
 
@@ -96,7 +95,6 @@ GitHub 默认把 `.html` 当**源代码**显示，不会执行里面的动画。
 | 12 | 豆包桌面端 | 豆包 2.1 Pro | ✗ |  | ✗ | ✗ | ✗ | 鹈鹕没有手、动作错误、嘴巴太大；地面运动方向不对；踏板穿模；膝盖动作不够顺畅 | 有问题 |
 | 13 | 豆包桌面端 | 豆包 2.1 Lite | ✗ | ✗ | ✗ | ✗ |  | 腿和身体严重分离、鹈鹕动作错误；踏板不完整、没有链条；踏板和脚穿模 | 效果差 |
 | 14 | 豆包桌面端 | 未记录 | ✗ |  |  | ✗ |  | 鹈鹕动作错误；踏板和脚转动错误；轮子速度太快 | 有问题 |
-
 | 15 | WorkBuddy | Kimi-K3.1-Pro | ✓ | ✓ | ✓ | ✓ | ✓ | 出色，无明显逻辑问题 | 效果出色 |
 | 16 | WorkBuddy | Space-Bunny |  |  | ✗ | ✗ |  | 腿穿模；链条转动方向错误；踏板连接不完整；屁股没挨着椅子 | 有问题 |
 
