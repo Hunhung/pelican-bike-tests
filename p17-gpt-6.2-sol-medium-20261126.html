@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pelican on wheels</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7edda;color:#263f39;font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh}main{width:min(960px,96vw)}header{display:flex;align-items:end;justify-content:space-between;margin:0 12px 18px}h1{font-size:clamp(24px,5vw,54px);letter-spacing:-.05em;margin:0;line-height:1}small{letter-spacing:.18em}svg{width:100%;display:block;border-radius:24px;background:#f1dfb8;box-shadow:0 20px 60px #745e3322}.spin{animation:spin 1.3s linear infinite}.crank{animation:spin 1.3s linear infinite}.bird{animation:bob .65s ease-in-out infinite alternate}.cloud{animation:drift 12s linear infinite}.road{animation:road 1.3s linear infinite}.blink{animation:blink 5s infinite} @keyframes spin{to{transform:rotate(360deg)}}@keyframes bob{to{transform:translateY(-4px) rotate(-1deg)}}@keyframes drift{to{transform:translateX(-300px)}}@keyframes road{to{transform:translateX(-100px)}}@keyframes blink{0%,94%,100%{transform:scaleY(1)}96%,98%{transform:scaleY(.1)}}footer{display:flex;justify-content:space-between;align-items:center;margin:16px 12px;font-size:13px}button{border:1px solid #263f39;border-radius:50px;background:transparent;padding:10px 22px;color:inherit;cursor:pointer}.paused *{animation-play-state:paused!important}
+</style></head>
+<body><main><header><div><small>THE COASTAL CLUB / 01</small><h1>Pelican on wheels.</h1></div><small>SVG · 2D LOOP</small></header>
+<svg id="scene" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="一只鹈鹕在海边骑自行车">
+<defs><g id="wheel"><circle r="76" fill="#fff1d4" stroke="#263f39" stroke-width="9"/><circle r="65" fill="none" stroke="#b99c71" stroke-width="2"/><g stroke="#78948b" stroke-width="2"><path d="M-65 0H65 M0-65V65 M-46-46L46 46 M-46 46L46-46"/></g><circle r="8" fill="#263f39"/></g><pattern id="dashes" width="100" height="10" patternUnits="userSpaceOnUse"><rect x="0" y="3" width="48" height="4" rx="2" fill="#f9e7c4"/></pattern></defs>
+<rect width="900" height="520" fill="#f2dfb7"/><circle cx="730" cy="105" r="55" fill="#e9ad58"/>
+<g fill="#fff5df" opacity=".85" class="cloud"><path d="M40 112q18-28 45-10q20-38 55-10q45-5 45 20Z"/><path d="M340 66q20-22 42-8q20-32 49-6q32-4 32 14Z"/><path d="M890 112q18-28 45-10q20-38 55-10q45-5 45 20Z"/></g>
+<path d="M0 275Q100 220 200 270T400 265T600 270T900 230V420H0Z" fill="#9fbead"/><path d="M0 307Q120 280 240 312T480 305T720 310T900 295V430H0Z" fill="#6e9e96"/><path d="M0 342Q130 321 260 342T520 342T780 340T900 338" fill="none" stroke="#dbe3c0" stroke-width="4"/>
+<rect y="385" width="900" height="135" fill="#b7a17c"/><rect y="403" width="900" height="4" fill="#f9e7c4"/><rect class="road" x="0" y="490" width="1000" height="10" fill="url(#dashes)"/><ellipse cx="450" cy="467" rx="220" ry="13" fill="#665a48" opacity=".18"/>
+<!-- wheels -->
+<g transform="translate(290 389)"><g class="spin"><use href="#wheel"/></g></g><g transform="translate(610 389)"><g class="spin"><use href="#wheel"/></g></g>
+<!-- bicycle -->
+<g fill="none" stroke="#b84936" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M290 389L410 389L359 270L290 389M359 270L559 275L410 389L359 270M559 275L610 389"/></g>
+<g stroke="#263f39" fill="none" stroke-width="6" stroke-linecap="round"><path d="M559 275L545 239L566 220H599M359 270L350 245"/><path d="M345 245h-23" stroke-width="13"/><path d="M595 220h14" stroke-width="11"/></g>
+<circle cx="410" cy="389" r="22" fill="#f4d9a8" stroke="#263f39" stroke-width="4"/>
+<g transform="translate(410 389)"><g class="crank" stroke="#263f39" stroke-width="6" stroke-linecap="round"><path d="M-29 0H29"/><path d="M-36 0h14M22 0h14" stroke="#e5af60" stroke-width="9"/></g></g>
+<!-- far leg -->
+<path id="farLeg" fill="none" stroke="#c77c3b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path id="farFoot" stroke="#c77c3b" stroke-width="13" stroke-linecap="round"/>
+<g class="bird" style="transform-origin:360px 235px">
+<!-- tail and body -->
+<path d="M341 205Q294 194 273 166Q270 210 302 235L350 245Z" fill="#ded6bf" stroke="#263f39" stroke-width="3"/>
+<path d="M318 211C326 184 371 180 404 195C426 178 429 151 411 120C396 89 410 56 446 47C484 38 508 65 503 91C499 115 472 125 463 144C451 170 479 215 451 244C421 278 350 271 324 243Q311 229 318 211Z" fill="#fff4db" stroke="#263f39" stroke-width="3.5"/>
+<!-- long pelican bill with throat pouch -->
+<path d="M480 81Q521 76 591 92L625 104Q573 109 513 106Q497 104 480 100Z" fill="#e7a648" stroke="#263f39" stroke-width="3"/>
+<path d="M482 100Q541 108 625 104Q591 129 557 137Q514 148 487 116Z" fill="#df8e50" stroke="#263f39" stroke-width="3"/>
+<path d="M483 100L625 104" stroke="#263f39" stroke-width="2"/>
+<g class="blink" style="transform-origin:470px 76px"><ellipse cx="470" cy="76" rx="5" ry="6" fill="#263f39"/><circle cx="472" cy="74" r="1.6" fill="white"/></g>
+<!-- wing, reaches bars -->
+<path d="M343 211Q370 195 396 207Q421 214 453 231L552 218Q566 216 563 225L552 236L451 251Q392 260 351 237Q333 227 343 211Z" fill="#e6ddc6" stroke="#263f39" stroke-width="3"/><path d="M351 222Q385 248 428 240M365 211Q391 230 424 230" fill="none" stroke="#b4ad9b" stroke-width="2"/>
+<!-- scarf -->
+<path d="M424 137Q445 149 463 141L465 153Q442 162 423 148Z" fill="#b84936"/><path d="M429 149Q385 139 373 159L405 160L376 178Q416 177 439 155" fill="#b84936" stroke="#9d382b" stroke-width="2"/>
+</g>
+<path id="nearLeg" fill="none" stroke="#e7a648" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path id="nearFoot" stroke="#e7a648" stroke-width="14" stroke-linecap="round"/>
+<path d="M20 20h45M20 20v45M880 20h-45M880 20v45" stroke="#263f39" stroke-width="2" fill="none" opacity=".4"/>
+</svg><footer><span>手绘矢量 · 海边骑行 · 无限循环</span><button id="toggle">暂停动画</button></footer></main>
+<script>
+// 双腿与踏板共享同一个旋转周期，使脚始终贴合踏板。
+const scene=document.querySelector('#scene'), toggle=document.querySelector('#toggle');
+let time=0,last=performance.now(),paused=false;
+function leg(id, angle, hipX, hipY){
+ const x=410+29*Math.cos(angle),y=389+29*Math.sin(angle);
+ const dx=x-hipX,dy=y-hipY,d=Math.hypot(dx,dy),length=90;
+ const h=Math.sqrt(Math.max(0,length*length-d*d/4));
+ const kx=(x+hipX)/2+dy/d*h,ky=(y+hipY)/2-dx/d*h;
+ document.querySelector('#'+id+'Leg').setAttribute('d',`M${hipX} ${hipY} L${kx} ${ky} L${x} ${y-5}`);
+ document.querySelector('#'+id+'Foot').setAttribute('d',`M${x-8} ${y-6}h23`);
+}
+function frame(now){if(!paused)time+=now-last;last=now;const a=time/1300*Math.PI*2;document.querySelector(".crank").style.animation="none";document.querySelector(".crank").setAttribute("transform","rotate("+a*180/Math.PI+")");
+ leg('far',a+Math.PI,366,250);leg('near',a,389,250);requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+toggle.onclick=()=>{paused=!paused;document.body.classList.toggle('paused',paused);toggle.textContent=paused?'继续动画':'暂停动画'};
+</script></body></html>
